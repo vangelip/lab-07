@@ -46,7 +46,7 @@ The distribution is skewed towards the higher ratings. It is expected because st
 plot_geom_point  <- ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) +
                     geom_point()
 
-plot_geom_jitter <- ggplot(data = evals, mapping = aes(x = bty_avg, y = score))
+plot_geom_jitter <- ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) +
                     geom_jitter()
 
 plot_geom_point + plot_geom_jitter
@@ -71,7 +71,11 @@ score = 3.880 + 0.067bty_avg
 ### Exercise 4
 
 ```{r viz-score_bty_fit}
-# add your code here
+ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) +
+  geom_jitter() +
+  geom_smooth(method = "lm",
+              se = FALSE,
+              colour = "orange")
 ```
 
 ### Exercise 5
