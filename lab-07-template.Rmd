@@ -56,19 +56,17 @@ plot_geom_point + plot_geom_jitter
 
 ### Exercise 3
 
-```{r fit-score_bty_fit, eval = FALSE}
-# remove eval = FALSE from the code chunk options after filling in the blanks
+```{r fit-score_bty_fit}
 score_bty_fit <- linear_reg() %>%
   set_engine("lm") %>%
-  fit(___ ~ ___, data = ___)
+  fit(score ~ bty_avg, data = evals)
 ```
 
-```{r tidy-score_bty_fit, eval = FALSE}
-# remove eval = FALSE from the code chunk options after filling in the blanks
-tidy(___)
+```{r tidy-score_bty_fit}
+tidy(score_bty_fit)
 ```
 
-*Add your linear model here. Don't worry too much about notation, you can use things like score-hat.*
+score = 3.880 + 0.067bty_avg 
 
 ### Exercise 4
 
@@ -78,20 +76,20 @@ tidy(___)
 
 ### Exercise 5
 
-*Add interpretation of intercept here.*
+For each additional point in average beauty rating a professor has, their score increases by 0.067.
 
 ### Exercise 6
 
-*Add interpretation of intercept here.*
+The intercept estimate of 3.88 makes sense as a professor with a beauty rating of 0 should be able to teach a course.
 
 ### Exercise 7
 
 ```{r glance-score_bty_fit, eval = FALSE}
 # remove eval = FALSE from the code chunk options after filling in the blanks
-glance(___)
+glance(score_bty_fit)
 ```
 
-*Add interpretation of R-squared here.*
+The r.squared value of 0.035 indicates that there is a very weak correlation between a professor's average beauty and the score they get.
 
 ### Exercise 8
 
