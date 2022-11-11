@@ -28,10 +28,11 @@ evals<-read.csv("data/evals.csv", row.names=1)
 ### Exercise 1
 
 ```{r viz-score}
-# add code here
+ggplot(data = evals, mapping = aes(x = score))+
+  geom_bar()
 ```
 
-*Add your narrative here.*
+The distribution is skewed towards the higher ratings. It is expected because students do not want to be too critical of their professors and courses, and additionally they have usually chosen courses that interest them so they would be biased generally to prefer the courses they have chosen. 
 
 ### Exercise 2
 
