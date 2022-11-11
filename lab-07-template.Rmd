@@ -43,9 +43,11 @@ The distribution is skewed towards the higher ratings. It is expected because st
 # this uses the patchwork package loaded above
 # learn more about patchwork at https://patchwork.data-imaginist.com/
 # it might be useful for your presentations!
-plot_geom_point  <- ggplot(___)
+plot_geom_point  <- ggplot(data = evals, mapping = aes(x = bty_avg, y = score)) +
+                    geom_point()
 
-plot_geom_jitter <- ggplot(___)
+plot_geom_jitter <- ggplot(data = evals, mapping = aes(x = bty_avg, y = score))
+                    geom_jitter()
 
 plot_geom_point + plot_geom_jitter
 ```
